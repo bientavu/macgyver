@@ -10,7 +10,8 @@ window = pygame.display.set_mode((450, 450))
 
 
 #charger jeu
-playgame = Playgame()
+labyrinth = Labyrinth()
+labyrinth.display_level(window)
 
 running = True
 
@@ -18,7 +19,7 @@ running = True
 while running:
 
     #appliquer l'image de mon joueur
-    window.blit(playgame.player.image, playgame.player.rect)
+    #window.blit(playgame.player.image, playgame.player.rect)
     #mettre à jour l'écran
     pygame.display.flip()
         
@@ -29,5 +30,3 @@ while running:
             running = False
 
 
-labyrinth = Labyrinth()
-labyrinth.labyrinth_construction()

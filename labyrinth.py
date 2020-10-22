@@ -25,7 +25,7 @@ class Labyrinth():
         """
         wall = pygame.image.load(WALL_PATH).convert_alpha()
         floor = pygame.image.load(FLOOR_PATH).convert_alpha()
-        end = pygame.image.load(END_PATH).convert_alpha()
+        #end = pygame.image.load(END_PATH).convert_alpha()
 
         x = 0
         y = 0
@@ -38,8 +38,8 @@ class Labyrinth():
                 elif letter == "F":
                     window.blit(floor, [x, y])
 
-                else:
-                    window.blit(end, [x, y])
+                #else:
+                    #window.blit(end, [x, y])
 
                 x += SPRITE_SIZE
 
