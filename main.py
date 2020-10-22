@@ -9,12 +9,10 @@ pygame.display.set_caption("Aidez MacGyver à s'échapper")
 window = pygame.display.set_mode((450, 450))
 
 
-#charger notre jeu
+#charger jeu
 playgame = Playgame()
 
 running = True
-
-
 
 #Boucle
 while running:

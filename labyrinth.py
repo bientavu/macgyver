@@ -49,6 +49,7 @@ class Labyrinth():
 
 
 
+
 laby = Labyrinth()
 laby.labyrinth_construction()
 
