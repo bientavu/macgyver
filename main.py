@@ -19,7 +19,6 @@ running = True
 #Boucle
 while running:
 
-    window.blit(playgame.player.image, playgame.player.rect)
     #appliquer l'image de mon joueur
     window.blit(playgame.player.image, playgame.player.rect)
     #mettre à jour l'écran
