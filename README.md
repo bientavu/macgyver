@@ -1,5 +1,11 @@
 # MacGyver Game
 
+## **Game Rules**
+For this game, you'll have to escape from the labyrinth.  
+But in order to do so, you'll have to send the guardian off to sleep.  
+You'll need to collect 3 items for this. An item counter is displayed on the bottom left corner.  
+Once you have collected all 3 items, you can make the guardian sleep and escape.
+
 ## **How to make the game work**
 1. Python must be installed on your computer
 2. You have to create a virtual environment
@@ -19,8 +25,4 @@ Then you can launch the game:
 * Windows: `python main.py`
 * Mac/Linux: `python3 main.py`
 
-## **Game Rules**
-For this game, you'll have to escape from the labyrinth.  
-But in order to do so, you'll have to send the guardian off to sleep.  
-You'll need to collect 3 items for this. An item counter is displayed on the bottom left corner.  
-Once you have collected all 3 items, you can make the guardian sleep and escape.
+Enjoy!
