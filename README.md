@@ -1,14 +1,21 @@
-Pour faire fonctionner le jeu :
-    • Python doit être installer sur votre machine\n
-    • Vous devez créer un environnement virtuel
-    • La dépendance Pygame doit également être installé
+# MacGyver Game
+
+How to make the game work:
+    • Python must be installed on your computer
+    • You have to createa virtual environment
+    • Pygame dependency need to be installed as well
     
-Pour l'environnement virtuel, il faut d'abord le créer :
-    • Windows: py -3.8 -m venv env
-    • Mac/Linux: python3 -m venv env
-Puis l'activer : 
-    • Windows: source venv\Scripts\activate
-    • Mac/Linux: source/bin/activate
+For the virtual environment you need to create it:
+    • Windows:
+    py -3.8 -m venv env
+    • Mac/Linux:
+    python3 -m venv env
+    
+Then activate it: 
+    • Windows:
+    source venv\Scripts\activate
+    • Mac/Linux:
+    source/bin/activate
 
 Concernant la dépendance Pygame : pip3 install -r requirements.txt
 
