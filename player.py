@@ -77,23 +77,3 @@ class Player():
                         next_position
                     )  # Determine new position to blit mac_gyver_image
                     self.blit(past_position)
-
-
-
-
-    # def move_right(self):
-    #     self.rect.x += self.velocity
-
-    # def move_left(self):
-    #     self.rect.x -= self.velocity
-
-    # def move_up(self):
-    #     self.rect.y -= self.velocity
-
-    # def move_down(self):
-    #     self.rect.y += self.velocity
-
-    # def check_collision(self, sprite, group):
-    #     return pygame.sprite.spritecollide(sprite, group, False, pygame.sprite.collide_mask)
-            # if self.check_collision(self, labyrinth.structure_w[5]):
-        #     self.velocity = 0

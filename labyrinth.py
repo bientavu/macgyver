@@ -51,3 +51,22 @@ class Labyrinth():
             if next_position[0] >= 0 and next_position[1] >= 0:
                 if self.structure[next_position[1]][next_position[0]] != "W":
                     return True
+
+
+    def end_game(self, player):
+        '''
+        Game finished if player is in the end position
+        '''
+        if player.position == [14, 14]:
+            return False
+        else:
+            return True
+
+    def response(self, player, objects):
+        '''
+        Check if player win or loose
+        '''
+        if player.position == [14, 14] and objects.objects_collected == 3:
+            return True
+        elif player.position == [14, 14] and objects.objects_collected != 3:
+            return False
