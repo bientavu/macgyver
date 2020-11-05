@@ -1,16 +1,16 @@
 import pygame
-from constantes import WALL_PATH, FLOOR_PATH, END_PATH, SPRITE_SIZE
-
+from constantes import WALL_IMAGE, FLOOR_IMAGE, END_IMAGE, SPRITE_SIZE, STRUCTURE_SIZE
 
 class Labyrinth():
 
     def __init__(self):
+        super().__init__()
         self.structure = []
 
     def labyrinth_construction(self):
-        """
+        '''
         Init labyrinth
-        """
+        '''
         with open('labyrinth.txt', 'r') as file:
             for line in file:
                 row = []
@@ -19,13 +19,14 @@ class Labyrinth():
                         row.append(letter)
                 self.structure.append(row)
 
+
     def display_level(self, window):
-        """
+        '''
         Display level
-        """
-        wall = pygame.image.load(WALL_PATH).convert_alpha()
-        floor = pygame.image.load(FLOOR_PATH).convert_alpha()
-        #end = pygame.image.load(END_PATH).convert_alpha()
+        '''
+        wall = pygame.image.load(WALL_IMAGE).convert_alpha()
+        floor = pygame.image.load(FLOOR_IMAGE).convert_alpha()
+        end = pygame.image.load(END_IMAGE).convert_alpha()
         x = 0
         y = 0
         for line in self.structure:
@@ -34,18 +35,19 @@ class Labyrinth():
                     window.blit(wall, [x, y])
                 elif letter == "F":
                     window.blit(floor, [x, y])
-                #else:
-                    #window.blit(end, [x, y])
+                else:
+                    window.blit(end, [x, y])
                 x += SPRITE_SIZE
                 if x >= len(line)*SPRITE_SIZE:
                     x = 0
                     y += SPRITE_SIZE
 
 
-
-
-# laby = Labyrinth()
-# laby.labyrinth_construction()
-
-# for element in laby.structure:
-#     print(element)
+    def test_next_position(self, next_position):
+        '''
+        Test if player position is available
+        '''
+        if (next_position[0] < STRUCTURE_SIZE[0] and next_position[1] < STRUCTURE_SIZE[1]):
+            if next_position[0] >= 0 and next_position[1] >= 0:
+                if self.structure[next_position[1]][next_position[0]] != "W":
+                    return True
