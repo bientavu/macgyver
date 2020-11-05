@@ -1,5 +1,5 @@
 Pour faire fonctionner le jeu :
-    • Python doit être installer sur votre machine
+    • Python doit être installer sur votre machine\n
     • Vous devez créer un environnement virtuel
     • La dépendance Pygame doit également être installé
     
