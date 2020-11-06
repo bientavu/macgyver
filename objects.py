@@ -74,7 +74,7 @@ class Objects():
         self.objects_collected = self.counter_ether + self.counter_syringe + self.counter_needle
 
         self.display_object_collected(
-            self.objects_collected, ONE_IMAGE, TWO_IMAGE, THREE_IMAGE, WALL_IMAGE, player.position)
+            self.objects_collected, ONE_IMAGE, TWO_IMAGE, THREE_IMAGE, WALL_IMAGE, player)
 
         return self.objects_collected
 
@@ -87,13 +87,15 @@ class Objects():
         two = pygame.image.load(TWO_IMAGE).convert_alpha()
         three = pygame.image.load(THREE_IMAGE).convert_alpha()
         reset = pygame.image.load(RESET_IMAGE).convert_alpha()
+        ether_image = pygame.image.load(ETHER_IMAGE).convert_alpha()
+
         position_objects_display = [i * SPRITE_SIZE for i in [0, 15]]
-        # position_objects_display_2 = [i * SPRITE_SIZE for i in [1, 15]]
+        position_objects_display_2 = [i * SPRITE_SIZE for i in [1, 15]]
         window = self.window
 
-        if objects_collected == 1: #and player.position == self.ether_position:
+        if objects_collected == 1 and player.position == self.ether_position:
             window.blit(one, position_objects_display)
-            #window.blit(ETHER_IMAGE, position_objects_display_2)
+            window.blit(ether_image, position_objects_display_2)
         elif objects_collected == 2:
             window.blit(reset, position_objects_display)
             window.blit(two, position_objects_display)

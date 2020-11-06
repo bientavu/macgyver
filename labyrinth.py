@@ -62,6 +62,7 @@ class Labyrinth():
         else:
             return True
 
+
     def response(self, player, objects):
         '''
         Check if player win or loose
