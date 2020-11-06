@@ -3,6 +3,7 @@ from labyrinth import Labyrinth
 from game import Game
 from constantes import MENU_IMAGE, WIN_IMAGE, LOOSE_IMAGE
 
+
 def main():
     pygame.init()
 
@@ -27,6 +28,7 @@ def main():
         else:
             game.player_loose(LOOSE_IMAGE)
         running = game.run
+
 
 if __name__ == "__main__":
     main()
