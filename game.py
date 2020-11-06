@@ -56,7 +56,7 @@ class Game:
         Display menu
         """
         self.menu_i = pygame.image.load(menu_image).convert_alpha()
-        self.window.blit(self.menu, (0, 0))
+        self.window.blit(self.menu_i, (0, 0))
 
         play_button = pygame.image.load("assets/playbutton.png")
         play_button = pygame.transform.scale(play_button, (200, 70))

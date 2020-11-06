@@ -65,8 +65,10 @@ class Objects:
             self.syringe_position = self.generate_random_position()
             self.needle_position = self.generate_random_position()
 
-            self.ether_position_pixel = [i * SPRITE_SIZE for i in self.ether_position]
-            self.needle_position_pixel = [i * SPRITE_SIZE for i in self.needle_position]
+            self.ether_position_pixel = [
+                i * SPRITE_SIZE for i in self.ether_position]
+            self.needle_position_pixel = [
+                i * SPRITE_SIZE for i in self.needle_position]
             self.syringe_position_pixel = [
                 i * SPRITE_SIZE for i in self.syringe_position
             ]
@@ -102,7 +104,7 @@ class Objects:
         return self.objects_collected
 
     def display_object_collected(
-        self, objects_collected, one, two, three, wall_image, player
+        self, objects_collected, one, two, three, reset_image, player
     ):
         """
         Display counter of collected objects
@@ -110,19 +112,49 @@ class Objects:
         one = pygame.image.load(ONE_IMAGE).convert_alpha()
         two = pygame.image.load(TWO_IMAGE).convert_alpha()
         three = pygame.image.load(THREE_IMAGE).convert_alpha()
-        reset = pygame.image.load(RESET_IMAGE).convert_alpha()
+        reset_image = pygame.image.load(RESET_IMAGE).convert_alpha()
         ether_image = pygame.image.load(ETHER_IMAGE).convert_alpha()
+        needle_image = pygame.image.load(NEEDLE_IMAGE).convert_alpha()
+        syringe_image = pygame.image.load(SYRINGE_IMAGE).convert_alpha()
 
         position_objects_display = [i * SPRITE_SIZE for i in [0, 15]]
-        position_objects_display_2 = [i * SPRITE_SIZE for i in [1, 15]]
+        position_objects_display_1 = [i * SPRITE_SIZE for i in [1, 15]]
+        position_objects_display_2 = [i * SPRITE_SIZE for i in [2, 15]]
+        position_objects_display_3 = [i * SPRITE_SIZE for i in [3, 15]]
         window = self.window
 
         if objects_collected == 1 and player.position == self.ether_position:
             window.blit(one, position_objects_display)
-            window.blit(ether_image, position_objects_display_2)
-        elif objects_collected == 2:
-            window.blit(reset, position_objects_display)
+            window.blit(ether_image, position_objects_display_1)
+        elif objects_collected == 1 and player.position == self.needle_position:
+            window.blit(one, position_objects_display)
+            window.blit(needle_image, position_objects_display_1)
+        elif objects_collected == 1 and player.position == self.syringe_position:
+            window.blit(one, position_objects_display)
+            window.blit(syringe_image, position_objects_display_1)
+
+        elif objects_collected == 2 and player.position == self.ether_position:
+            window.blit(reset_image, position_objects_display)
             window.blit(two, position_objects_display)
-        elif objects_collected == 3:
-            window.blit(reset, position_objects_display)
+            window.blit(ether_image, position_objects_display_2)
+        elif objects_collected == 2 and player.position == self.needle_position:
+            window.blit(reset_image, position_objects_display)
+            window.blit(two, position_objects_display)
+            window.blit(needle_image, position_objects_display_2)
+        elif objects_collected == 2 and player.position == self.syringe_position:
+            window.blit(reset_image, position_objects_display)
+            window.blit(two, position_objects_display)
+            window.blit(syringe_image, position_objects_display_2)
+
+        elif objects_collected == 3 and player.position == self.ether_position:
+            window.blit(reset_image, position_objects_display)
             window.blit(three, position_objects_display)
+            window.blit(ether_image, position_objects_display_3)
+        elif objects_collected == 3 and player.position == self.needle_position:
+            window.blit(reset_image, position_objects_display)
+            window.blit(three, position_objects_display)
+            window.blit(needle_image, position_objects_display_3)
+        elif objects_collected == 3 and player.position == self.syringe_position:
+            window.blit(reset_image, position_objects_display)
+            window.blit(three, position_objects_display)
+            window.blit(syringe_image, position_objects_display_3)
