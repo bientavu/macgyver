@@ -10,7 +10,6 @@ from constantes import (
 
 class Labyrinth:
     def __init__(self):
-        super().__init__()
         self.structure = []
 
     def labyrinth_construction(self):
