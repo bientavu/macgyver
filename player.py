@@ -1,5 +1,4 @@
 import pygame
-import pylint
 from constantes import MAC_GYVER_IMAGE, FLOOR_IMAGE, SPRITE_SIZE
 from labyrinth import Labyrinth
 
