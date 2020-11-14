@@ -17,7 +17,7 @@ For the virtual environment you need to create it:
     
 Then activate it: 
 * Windows: `source venv\Scripts\activate`
-* Mac/Linux: `source/bin/activate`
+* Mac/Linux: `source env/bin/activate`
 
 Regarding the Pygame dependency: `pip3 install -r requirements.txt`
 
